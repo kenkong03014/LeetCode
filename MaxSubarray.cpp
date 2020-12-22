@@ -103,7 +103,7 @@ int maxSubArray(vector<int>& nums)
 }
 int main()
 {
-    vector<int> maxsub = {8,-19,5,-4,20};
+    vector<int> maxsub = {-19,-4};
 
     int greatest = maxSubArray(maxsub);
 

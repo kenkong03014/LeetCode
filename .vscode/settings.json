@@ -7,6 +7,7 @@
         "utility": "cpp",
         "valarray": "cpp",
         "iostream": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "algorithm": "cpp"
     }
 }
