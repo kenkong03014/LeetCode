@@ -9,6 +9,7 @@
         "iostream": "cpp",
         "ratio": "cpp",
         "algorithm": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "new": "cpp"
     }
 }
