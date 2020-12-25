@@ -9,24 +9,26 @@
 #include <cstring>
 using namespace std;
 
+/** Main points:
+ * 1. check equal size of '(', '{', and '['.
+ * 2. Use vector to keep track the lastest open symbol.
+ * For example, ([{}, '{' is the lastest open sysmbol, so we expect the next
+ * close symbol would be '}', otherwise, return false.
+ */
 bool isValid(string s) {
     if(s.size() == 0 || s.size()%2 != 0 )
         return false;
     else if(s[0] == ')' || s[0] == ']' || s[0] == '}')
         return false;
+    else if(s.size() == 2 && s[0] == s[1])
+        return false;
     
     int* charArr = new int[6];
-    int* arrPos = new int[3];
     vector<int> trackOpen;
-    int count = 0;
-    int tmp =0;
 
     for(int i =0; i<6; i++)
     {
         charArr[i] = 0;
-        
-        if(i<3)
-            arrPos[i] = 0;
     }
 
     for(int i =0; i<s.size(); i++)
@@ -34,21 +36,17 @@ bool isValid(string s) {
         if(s[i] == '(')
         {
             charArr[0]++;
-            arrPos[0] = i;
             trackOpen.push_back(1);
         }
         else if(s[i] == ')')
         {
-            tmp = charArr[1] + 1;
-            if(tmp > charArr[0])
+            if(charArr[1] + 1 > charArr[0])
                 return false;
             else
             {
                 charArr[1]++;
-                if(arrPos[0]%2 == i%2  || trackOpen.back() != 1 )
+                if(trackOpen.back() != 1 )
                 {
-                    cout << "bakc is: " << trackOpen.back() << endl;
-                    cout << i << ": here\n";
                     return false;
                 }
                 trackOpen.pop_back();
@@ -57,20 +55,17 @@ bool isValid(string s) {
         else if(s[i] == '[')
         {
             charArr[2]++;
-            arrPos[1] = i;
             trackOpen.push_back(2);
         }
         else if(s[i] == ']')
         {
-            tmp = charArr[3] + 1;
-            if(tmp > charArr[2])
+            if(charArr[3] + 1 > charArr[2])
                 return false;
             else
             {
                 charArr[3]++;
-                if(arrPos[1]%2 == i%2 || trackOpen.back() !=2 )
+                if(trackOpen.back() !=2 )
                 {
-                    cout << i << ": here2\n";
                     return false;
                 }
                 trackOpen.pop_back();
@@ -79,20 +74,17 @@ bool isValid(string s) {
         else if(s[i] == '{')
         {
             charArr[4]++;
-            arrPos[2] = i;
             trackOpen.push_back(3);
         }
         else if(s[i] == '}')
         {
-            tmp = charArr[5] + 1;
-            if(tmp > charArr[4])
+            if(charArr[5] + 1 > charArr[4])
                 return false;
             else
             {
                 charArr[5]++;
-                if(arrPos[2]%2 == i%2 || trackOpen.back() !=3 )
+                if(trackOpen.back() !=3 )
                 {
-                    cout << "here3\n";
                     return false;
                 }
                 trackOpen.pop_back();
