@@ -24,45 +24,21 @@ ListNode* reverseList(ListNode* head) {
 		return head;
 	}
 
-	ListNode* output = new ListNode();
-	ListNode* front = new ListNode();
-	ListNode* rear = new ListNode();
-	ListNode* tmp = head;
-	int count = 0;
+	ListNode* prev = nullptr;
+	ListNode* current = head;
 
-	do
+	while(current != nullptr)
 	{
+		ListNode* tmp = current->next;
 
-		ListNode* newNode = new ListNode(tmp->val);
-		newNode->next = nullptr;
+		current->next = prev;
 
-		if (tmp->next == nullptr)
-		{
-			if (count != 1)
-				break;
-			else
-			{
-				newNode->next = new ListNode(head->val);
-				return newNode;
-			}
-		}
-		if (count == 0)
-		{
-			front = newNode;
-			front->next = rear;
-			rear = newNode;
-		}
-		else
-		{
-			rear->next = newNode;
-			rear = newNode;
-		}
-		tmp = tmp->next;
-		count++;
-	} while (tmp != nullptr);
-	output = tmp;
-	output->next = reverseList(front);
-	return output;
+		prev = current;
+
+		current = tmp;
+	}
+
+	return prev;
 }
 
 int main()
