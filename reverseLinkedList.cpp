@@ -23,7 +23,7 @@ ListNode* reverseList(ListNode* head) {
 	{
 		return head;
 	}
-
+	
 	ListNode* prev = nullptr;
 	ListNode* current = head;
 
