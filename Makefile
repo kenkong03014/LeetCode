@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS += -Wall -Wextra -Werror
-PROJ_NAME = reverseLinkedList
-PROJ_OBJ = reverseLinkedList.o
+PROJ_NAME = addStrings
+PROJ_OBJ = addStrings.o
 
 all: $(PROJ_NAME)
 	$(CC) $(CFLAGS) $(PROJ_OBJ) -o $(PROJ_NAME)
