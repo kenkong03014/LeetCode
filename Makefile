@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS += -Wall -Wextra -Werror
-PROJ_NAME = addStrings
-PROJ_OBJ = addStrings.o
+PROJ_NAME = PalindromeLinkedList
+PROJ_OBJ = PalindromeLinkedList.o
 
 all: $(PROJ_NAME)
 	$(CC) $(CFLAGS) $(PROJ_OBJ) -o $(PROJ_NAME)
