@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS += -Wall -Wextra -Werror
-PROJ_NAME = MinStack
-PROJ_OBJ = MinStack.o
+PROJ_NAME = MergeSortedArray
+PROJ_OBJ = MergeSortedArray.o
 
 all: $(PROJ_NAME)
 	$(CC) $(CFLAGS) $(PROJ_OBJ) -o $(PROJ_NAME)
