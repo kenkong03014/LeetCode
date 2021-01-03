@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS += -Wall -Wextra -Werror
-PROJ_NAME = MergeSortedArray
-PROJ_OBJ = MergeSortedArray.o
+PROJ_NAME = subdomainVisits
+PROJ_OBJ = subdomainVisits.o
 
 all: $(PROJ_NAME)
 	$(CC) $(CFLAGS) $(PROJ_OBJ) -o $(PROJ_NAME)
