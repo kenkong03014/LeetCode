@@ -1,15 +1,9 @@
-CC=g++
-CFLAGS += -Wall -Wextra -Werror
-PROJ_NAME = subdomainVisits
-PROJ_OBJ = subdomainVisits.o
+PROJ_NAME = hello
+make:
+	go build -o bin/$(PROJ_NAME) $(PROJ_NAME).go
 
-all: $(PROJ_NAME)
-	$(CC) $(CFLAGS) $(PROJ_OBJ) -o $(PROJ_NAME)
-
-$(PROJ_OBJ): $(PROJ_NAME).cpp
-	$(CC) $(CFLAGS) -c $(PROJ_NAME).cpp
+run:
+	go run $(PROJ_NAME).go
 
 clean:: 
-	-rm -f $(PROJ_NAME) $(PROJ_OBJ)
-
-.PHONY: clean
+	-rm -f bin/$(PROJ_NAME)

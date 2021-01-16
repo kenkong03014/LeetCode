@@ -1,0 +1,15 @@
+CC=g++
+CFLAGS += -Wall -Wextra -Werror
+PROJ_NAME = hello
+PROJ_OBJ = hello.o
+
+all: $(PROJ_NAME)
+	$(CC) $(CFLAGS) $(PROJ_OBJ) -o $(PROJ_NAME)
+
+$(PROJ_OBJ): $(PROJ_NAME).go
+	$(CC) $(CFLAGS) -go $(PROJ_NAME).go
+
+clean:: 
+	-rm -f $(PROJ_NAME) $(PROJ_OBJ)
+
+.PHONY: clean

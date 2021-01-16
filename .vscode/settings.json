@@ -68,5 +68,23 @@
         "thread": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp"
+    },
+    "[json]": {
+    
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace",
+        "terminal.integrated.shell.linux": "/usr/bin/zsh",
+        "go.gopath": "/home/beta/Coding/Go",
+        "go.goroot": "/usr/local/go",
+        "go.formatTool": "goformat",
+        "go.autocompleteUnimportedPackages": true,
+        "[go]": {
+            "editor.formatOnSave": true,
+            "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+            }
+        }
     }
 }
